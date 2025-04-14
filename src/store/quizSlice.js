@@ -13,7 +13,7 @@ const initialState = {
   questions: [],
   currentQuestionIndex: 0,
   userAnswers: {},
-  timeRemaining: 15,
+  timeRemaining: 30,
   status: 'idle',
   error: null,
   isComplete: false,
@@ -44,7 +44,7 @@ const quizSlice = createSlice({
     nextQuestion: (state) => {
       if (state.currentQuestionIndex < state.questions.length - 1) {
         state.currentQuestionIndex += 1;
-        state.timeRemaining = 15;
+        state.timeRemaining = 30;
       } else {
         state.isComplete = true;
         state.score = calculateScore(state.questions, state.userAnswers);
@@ -58,7 +58,7 @@ const quizSlice = createSlice({
     resetQuiz: (state) => {
       state.currentQuestionIndex = 0;
       state.userAnswers = {};
-      state.timeRemaining = 15;
+      state.timeRemaining = 30;
       state.isComplete = false;
       state.score = 0;
       state.started = false;
