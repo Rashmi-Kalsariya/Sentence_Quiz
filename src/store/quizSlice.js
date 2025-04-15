@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchQuestions = createAsyncThunk(
   'quiz/fetchQuestions',
   async () => {
-    const response = await axios.get('http://localhost:3001/data');
+    const response = await axios.get('https://jsonserver-a7y0.onrender.com/data');
     return response.data.questions;
   }
 );
